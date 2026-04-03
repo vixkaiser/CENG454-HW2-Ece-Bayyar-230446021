@@ -7,6 +7,8 @@ public class DangerZoneController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("Trigger entered");
+
         if (collision.CompareTag("Player"))
         {
             examManager.EnterDangerZone();
@@ -15,6 +17,8 @@ public class DangerZoneController : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
+        Debug.Log("Trigger exited");
+        
         if (collision.CompareTag("Player"))
         {
             examManager.ExitDangerZone();

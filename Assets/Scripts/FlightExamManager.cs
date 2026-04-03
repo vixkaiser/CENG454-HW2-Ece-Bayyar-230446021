@@ -12,11 +12,17 @@ public class FlightExamManager : MonoBehaviour
     
     public void EnterDangerZone()
     {
-        // TODO: update the mission state and HUD
+        if (statusText != null)
+        {
+            statusText.text = "Entered a Dangerous Zone!";
+        }
     }
 
     public void ExitDangerZone()
     {
-        // TODO: mark the threat as cleared and refresh the HUD
+        if (statusText != null)
+        {
+            statusText.text = "";
+        }
     }
 }
