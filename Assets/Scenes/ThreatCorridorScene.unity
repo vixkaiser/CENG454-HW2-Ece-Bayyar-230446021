@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 554093699}
   - component: {fileID: 554093698}
   - component: {fileID: 554093697}
+  - component: {fileID: 554093701}
   m_Layer: 0
   m_Name: DangerZone
   m_TagString: DangerZone
@@ -419,6 +420,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554093701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554093696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52325d52bd353c43a0185c898e6f983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DangerZoneController
+  examManager: {fileID: 1548790038}
+  missileDelay: 5
 --- !u!1 &588356730
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +932,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1548790037}
+  - component: {fileID: 1548790038}
   m_Layer: 0
   m_Name: FlightExamManager
   m_TagString: Untagged
@@ -939,6 +955,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1548790038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548790036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a497ad8f9e11834294ee613dd3df5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlightExamManager
+  statusText: {fileID: 0}
+  missionText: {fileID: 0}
 --- !u!1 &1574273405
 GameObject:
   m_ObjectHideFlags: 3
