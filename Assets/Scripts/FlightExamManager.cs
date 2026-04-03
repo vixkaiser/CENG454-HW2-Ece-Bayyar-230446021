@@ -1,16 +1,22 @@
 using UnityEngine;
+using TMPro;
 
 public class FlightExamManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TMP_Text statusText;
+    [SerializeField] private TMP_Text missionText;
+
+    private bool hasTakenOff = false;
+    private bool threatCleared = false;
+    private bool missionComplete = false;
+    
+    public void EnterDangerZone()
     {
-        
+        // TODO: update the mission state and HUD
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ExitDangerZone()
     {
-        
+        // TODO: mark the threat as cleared and refresh the HUD
     }
 }
