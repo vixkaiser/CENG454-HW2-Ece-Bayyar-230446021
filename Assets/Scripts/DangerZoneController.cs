@@ -7,11 +7,17 @@ public class DangerZoneController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        //TODO
+        if (collision.CompareTag("Player"))
+        {
+            //TODO
+        }
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        //TODO
+        if (collision.CompareTag("Player"))
+        {
+            //TODO
+        }
     }
 }
