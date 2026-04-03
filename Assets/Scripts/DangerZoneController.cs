@@ -9,7 +9,7 @@ public class DangerZoneController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //TODO
+            examManager.EnterDangerZone();
         }
     }
 
