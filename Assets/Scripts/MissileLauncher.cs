@@ -19,6 +19,12 @@ public class MissileLauncher : MonoBehaviour
         Debug.Log("Launch point position: " + launchPoint.position);
 
         activeMissile = Instantiate(missilePrefab, launchPoint.position, launchPoint.rotation);
+        
+        Missile missileScript = activeMissile.GetComponent<Missile>();
+        if (missileScript != null)
+        {
+            missileScript.SetTarget(target);
+        }
 
         Debug.Log("Spawned object: " + activeMissile.name);
 

@@ -7,6 +7,8 @@ public class DangerZoneController : MonoBehaviour
     [SerializeField] private float missileDelay = 5f;
     [SerializeField] private MissileLauncher missileLauncher;
 
+    private Transform playerTransform;
+
     private Coroutine activeCountdown;
 
 
@@ -17,6 +19,8 @@ public class DangerZoneController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             examManager.EnterDangerZone();
+
+            playerTransform = collision.transform;
 
             activeCountdown = StartCoroutine(StartMissileCountdown());
         }
@@ -44,6 +48,6 @@ public class DangerZoneController : MonoBehaviour
 
         Debug.Log("Missile should launch now");
         
-        missileLauncher.Launch(null);
+        missileLauncher.Launch(playerTransform);
     }
 }
