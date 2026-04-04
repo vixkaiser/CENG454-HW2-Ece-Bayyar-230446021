@@ -39,6 +39,8 @@ public class DangerZoneController : MonoBehaviour
                 StopCoroutine(activeCountdown);
                 activeCountdown = null;
             }
+
+            missileLauncher.DestroyActiveMissile();
         }
     }
 
