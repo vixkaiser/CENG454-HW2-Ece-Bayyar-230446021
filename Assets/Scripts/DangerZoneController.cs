@@ -28,6 +28,12 @@ public class DangerZoneController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             examManager.ExitDangerZone();
+
+            if (activeCountdown != null)
+            {
+                StopCoroutine(activeCountdown);
+                activeCountdown = null;
+            }
         }
     }
 
