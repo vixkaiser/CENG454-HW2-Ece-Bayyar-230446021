@@ -20,9 +20,16 @@ public class FlightExamManager : MonoBehaviour
 
     public void ExitDangerZone()
     {
+        threatCleared = true;
+
         if (statusText != null)
         {
             statusText.text = "";
         }
+    }
+
+    public bool CanCompleteMission()
+    {
+        return threatCleared && !missionComplete;
     }
 }

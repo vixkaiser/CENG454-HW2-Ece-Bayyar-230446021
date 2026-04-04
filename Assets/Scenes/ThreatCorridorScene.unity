@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 611164518}
   - component: {fileID: 611164517}
   - component: {fileID: 611164516}
+  - component: {fileID: 611164520}
   m_Layer: 0
   m_Name: LandingStrip
   m_TagString: Untagged
@@ -704,7 +705,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -782,6 +783,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &611164520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611164515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e8c4c1b978d184e96ca18d38fdf491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LandingZoneController
+  examManager: {fileID: 1548790038}
 --- !u!1 &734453363
 GameObject:
   m_ObjectHideFlags: 0
