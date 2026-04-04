@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class MissileHoming : MonoBehaviour
 {
     private Transform target;
 

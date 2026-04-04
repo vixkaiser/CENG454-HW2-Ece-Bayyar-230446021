@@ -20,7 +20,7 @@ public class MissileLauncher : MonoBehaviour
 
         activeMissile = Instantiate(missilePrefab, launchPoint.position, launchPoint.rotation);
         
-        Missile missileScript = activeMissile.GetComponent<Missile>();
+        MissileHoming missileScript = activeMissile.GetComponent<MissileHoming>();
         if (missileScript != null)
         {
             missileScript.SetTarget(target);
