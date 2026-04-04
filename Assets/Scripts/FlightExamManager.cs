@@ -32,4 +32,14 @@ public class FlightExamManager : MonoBehaviour
     {
         return threatCleared && !missionComplete;
     }
+
+    public void ShowMissionComplete()
+{
+    if (statusText != null)
+    {
+        statusText.text = "Mission Complete!";
+    }
+
+    missionComplete = true;
+}
 }

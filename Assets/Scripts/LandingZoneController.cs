@@ -10,7 +10,13 @@ public class LandingZoneController : MonoBehaviour
         {
             if (examManager.CanCompleteMission())
             {
-                Debug.Log("Mission Complete");
+                if (examManager != null)
+                {
+                    Debug.Log("Mission Complete");
+
+                    // update HUD
+                    examManager.ShowMissionComplete();
+                }
             }
         }
     }
