@@ -7,15 +7,24 @@ public class AircraftThreatHandler : MonoBehaviour
 
     private Rigidbody rb;
 
+    private bool canBeHit = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
-        if (collision.CompareTag("Missile"))
+        if (collision.CompareTag("Missile") && canBeHit)
         {
+            canBeHit = false;
+
+            if (examManager != null)
+            {
+                examManager.RegisterMissileHit();
+            }
+            
             Destroy(collision.gameObject);
 
             if (rb != null)
@@ -26,9 +35,16 @@ public class AircraftThreatHandler : MonoBehaviour
 
             if (respawnPoint != null)
             {
-                rb.MovePosition(respawnPoint.position);
-                rb.MoveRotation(respawnPoint.rotation);
+                transform.position = respawnPoint.position;
+                transform.rotation = respawnPoint.rotation;
             }
+
+            Invoke(nameof(EnableHit), 0.5f);
         }
+    }
+
+    private void EnableHit()
+    {
+        canBeHit = true;
     }
 }

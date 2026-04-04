@@ -7,6 +7,7 @@ public class FlightExamManager : MonoBehaviour
     [SerializeField] private TMP_Text missionText;
 
     private bool hasTakenOff = false;
+    private bool wasHitByMissile = false;
     private bool threatCleared = false;
     private bool missionComplete = false;
     
@@ -25,6 +26,8 @@ public class FlightExamManager : MonoBehaviour
     
     public void EnterDangerZone()
     {
+        wasHitByMissile = false;
+
         if (statusText != null)
         {
             statusText.text = "Entered a Dangerous Zone!";
@@ -36,18 +39,36 @@ public class FlightExamManager : MonoBehaviour
         }
     }
 
-    public void ExitDangerZone()
+    public void RegisterMissileHit()
     {
-        threatCleared = true;
+        wasHitByMissile = true;
 
         if (statusText != null)
         {
-            statusText.text = "Threat cleared";
+            statusText.text = "Hit by a missile!";
         }
 
         if (missionText != null)
         {
-            missionText.text = "Land safely";
+            missionText.text = "Take Off";
+        }
+    }
+
+    public void ExitDangerZone()
+    {
+        if (!wasHitByMissile)
+        {
+            threatCleared = true;
+
+            if (statusText != null)
+            {
+                statusText.text = "Threat cleared";
+            }
+
+            if (missionText != null)
+            {
+                missionText.text = "Land safely";
+            }
         }
     }
 
