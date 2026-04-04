@@ -26,8 +26,8 @@ public class AircraftThreatHandler : MonoBehaviour
 
             if (respawnPoint != null)
             {
-                transform.position = respawnPoint.position;
-                transform.rotation = respawnPoint.rotation;
+                rb.MovePosition(respawnPoint.position);
+                rb.MoveRotation(respawnPoint.rotation);
             }
         }
     }
