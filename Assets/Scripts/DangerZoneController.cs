@@ -5,6 +5,7 @@ public class DangerZoneController : MonoBehaviour
 {
     [SerializeField] private FlightExamManager examManager;
     [SerializeField] private float missileDelay = 5f;
+    [SerializeField] private MissileLauncher missileLauncher;
 
     private Coroutine activeCountdown;
 
@@ -42,5 +43,7 @@ public class DangerZoneController : MonoBehaviour
         yield return new WaitForSeconds(missileDelay);
 
         Debug.Log("Missile should launch now");
+        
+        missileLauncher.Launch(null);
     }
 }

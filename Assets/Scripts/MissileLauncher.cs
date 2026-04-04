@@ -9,9 +9,20 @@ public class MissileLauncher : MonoBehaviour
 
     public GameObject Launch(Transform target)
     {
-        Debug.Log("Missile launching triggered");
+        if (missilePrefab == null || launchPoint == null)
+        {
+            Debug.Log("Missile prefab or launch point is missing");
+            return null;
+        }
 
-        return null;
+        Debug.Log("Missile launching triggered");
+        Debug.Log("Launch point position: " + launchPoint.position);
+
+        activeMissile = Instantiate(missilePrefab, launchPoint.position, launchPoint.rotation);
+
+        Debug.Log("Spawned object: " + activeMissile.name);
+
+        return activeMissile;
     }
 
     public void DestroyActiveMissile()
@@ -19,6 +30,7 @@ public class MissileLauncher : MonoBehaviour
         if (activeMissile != null)
         {
             Destroy(activeMissile);
+            activeMissile = null;
         }
     }
 }
