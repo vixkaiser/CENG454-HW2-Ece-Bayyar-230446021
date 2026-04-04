@@ -10,11 +10,29 @@ public class FlightExamManager : MonoBehaviour
     private bool threatCleared = false;
     private bool missionComplete = false;
     
+    void Start()
+    {
+        if (statusText != null)
+        {
+            statusText.text = "";
+        }
+
+        if (missionText != null)
+        {
+            missionText.text = "Take off";
+        }
+    }
+    
     public void EnterDangerZone()
     {
         if (statusText != null)
         {
             statusText.text = "Entered a Dangerous Zone!";
+        }
+
+        if (missionText != null)
+        {
+            missionText.text = "Escape the danger zone";
         }
     }
 
@@ -24,7 +42,12 @@ public class FlightExamManager : MonoBehaviour
 
         if (statusText != null)
         {
-            statusText.text = "";
+            statusText.text = "Threat cleared";
+        }
+
+        if (missionText != null)
+        {
+            missionText.text = "Land safely";
         }
     }
 

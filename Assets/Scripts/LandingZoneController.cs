@@ -6,7 +6,8 @@ public class LandingZoneController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player") && examManager != null)
+        Debug.Log("Landing touched by: " + collision.name + " | Tag: " + collision.tag);
+        if (collision.CompareTag("TailPoint") && examManager != null)
         {
             if (examManager.CanCompleteMission())
             {
