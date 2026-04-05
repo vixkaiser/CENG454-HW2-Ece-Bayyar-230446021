@@ -1,9 +1,16 @@
+using System.Collections;
 using UnityEngine;
 
 public class DangerZoneController : MonoBehaviour
 {
     [SerializeField] private FlightExamManager examManager;
     [SerializeField] private float missileDelay = 5f;
+    [SerializeField] private MissileLauncher missileLauncher;
+
+    private Transform playerTransform;
+
+    private Coroutine activeCountdown;
+
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -12,6 +19,10 @@ public class DangerZoneController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             examManager.EnterDangerZone();
+
+            playerTransform = collision.transform;
+
+            activeCountdown = StartCoroutine(StartMissileCountdown());
         }
     }
 
@@ -22,6 +33,23 @@ public class DangerZoneController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             examManager.ExitDangerZone();
+
+            if (activeCountdown != null)
+            {
+                StopCoroutine(activeCountdown);
+                activeCountdown = null;
+            }
+
+            missileLauncher.DestroyActiveMissile();
         }
+    }
+
+    private IEnumerator StartMissileCountdown()
+    {
+        yield return new WaitForSeconds(missileDelay);
+
+        Debug.Log("Missile should launch now");
+        
+        missileLauncher.Launch(playerTransform);
     }
 }

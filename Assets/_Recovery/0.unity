@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f6e6df990cbea943a9b3b3ba562fd6e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f6e6df990cbea943a9b3b3ba562fd6e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -239,10 +239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e56dd8424f858a48b98c35602f35a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlightController
-  pitchSpeed: 60
-  yawSpeed: 70
-  rollSpeed: 55
-  thrustSpeed: 15
+  pitchSpeed: 45
+  yawSpeed: 45
+  rollSpeed: 45
+  thrustSpeed: 8
 --- !u!4 &146898898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f6e6df990cbea943a9b3b3ba562fd6e, type: 3}
@@ -355,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 228801443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 480, y: 1, z: 250}
+  m_LocalPosition: {x: 480, y: 1, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -426,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 274236933}
   serializedVersion: 2
   m_LocalRotation: {x: 0.18910754, y: 0, z: 0, w: 0.9819564}
-  m_LocalPosition: {x: 500, y: 10, z: 5}
+  m_LocalPosition: {x: 500, y: 10, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -540,8 +540,8 @@ Transform:
   m_GameObject: {fileID: 554093696}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 500, y: 50, z: 320}
-  m_LocalScale: {x: 1200, y: 100, z: 150}
+  m_LocalPosition: {x: 500, y: 10, z: 150}
+  m_LocalScale: {x: 60, y: 20, z: 65}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -668,7 +668,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 500, y: 0.2, z: 50}
-  m_LocalScale: {x: 12, y: 0.5, z: 100}
+  m_LocalScale: {x: 12, y: 0.5, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -780,8 +780,8 @@ Transform:
   m_GameObject: {fileID: 611164515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 500, y: 0.2, z: 750}
-  m_LocalScale: {x: 12, y: 0.5, z: 100}
+  m_LocalPosition: {x: 500, y: 0.2, z: 300}
+  m_LocalScale: {x: 12, y: 0.5, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -940,7 +940,7 @@ Transform:
   m_GameObject: {fileID: 734453363}
   serializedVersion: 2
   m_LocalRotation: {x: 0.18910754, y: 0, z: 0, w: 0.9819564}
-  m_LocalPosition: {x: 500, y: 10, z: 5}
+  m_LocalPosition: {x: 500, y: 10, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1367,8 +1367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358610544
 MonoBehaviour:
@@ -1417,8 +1417,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 36
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlightExamManager
   statusText: {fileID: 1034922029}
-  missionText: {fileID: 1358610544}
+  missionText: {fileID: 0}
 --- !u!1 &1574273405
 GameObject:
   m_ObjectHideFlags: 3
