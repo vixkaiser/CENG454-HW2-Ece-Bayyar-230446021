@@ -72,6 +72,7 @@ public class FlightExamManager : MonoBehaviour
     public void RegisterMissileHit()
     {
         wasHitByMissile = true;
+        hasTakenOff = false;
 
         if (statusText != null)
         {

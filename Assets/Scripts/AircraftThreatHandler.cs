@@ -8,10 +8,12 @@ public class AircraftThreatHandler : MonoBehaviour
     private Rigidbody rb;
 
     private bool canBeHit = true;
+    private FlightController flightController;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        flightController = GetComponent<FlightController>();
     }
 
     private void OnTriggerStay(Collider collision)
@@ -37,6 +39,11 @@ public class AircraftThreatHandler : MonoBehaviour
             {
                 transform.position = respawnPoint.position;
                 transform.rotation = respawnPoint.rotation;
+            }
+
+            if (flightController != null)
+            {
+                flightController.ResetTakeoffState();
             }
 
             Invoke(nameof(EnableHit), 0.5f);

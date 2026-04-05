@@ -84,4 +84,10 @@ public class FlightController : MonoBehaviour
             transform.Translate(Vector3.forward * thrustSpeed * Time.deltaTime);
         }
     }
+
+    public void ResetTakeoffState()
+    {
+        hasTakenOff = false;
+        startY = transform.position.y;
+    }
 }
