@@ -57,7 +57,17 @@ public class FlightExamManager : MonoBehaviour
         }
     }
 
-        public void RegisterMissileHit()
+    public void RegisterTakeOff()
+    {
+        hasTakenOff = true;
+
+        if (missionText != null)
+        {
+            missionText.text = "Objective: Gain altitude";
+        }
+    }
+
+    public void RegisterMissileHit()
     {
         wasHitByMissile = true;
 
@@ -70,8 +80,18 @@ public class FlightExamManager : MonoBehaviour
         {
             missionText.text = "Objective: Take off";
         }
+
+        Invoke(nameof(ClearStatusText), 2f);
     }
 
+    private void ClearStatusText()
+    {
+        if (statusText != null && !missionComplete)
+        {
+            statusText.text = "";
+        }
+    }
+    
     public bool CanCompleteMission()
     {
         return threatCleared && !missionComplete;

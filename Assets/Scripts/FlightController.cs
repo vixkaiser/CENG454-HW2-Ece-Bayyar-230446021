@@ -12,11 +12,15 @@ public class FlightController : MonoBehaviour
     [SerializeField] float thrustSpeed = 5f; //units/second
 
     private Rigidbody rb;
+    private bool hasTakenOff = false;
+    private float startY;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        startY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -24,6 +28,17 @@ public class FlightController : MonoBehaviour
     {
         HandleRotation();
         HandleThrust();
+
+        if (!hasTakenOff && transform.position.y > startY + 2f)
+        {
+            hasTakenOff = true;
+
+            FlightExamManager examManager = FindFirstObjectByType<FlightExamManager>();
+            if (examManager != null)
+            {
+                examManager.RegisterTakeOff();
+            }
+        }
     }
 
     private void HandleRotation()
