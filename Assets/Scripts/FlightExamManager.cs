@@ -54,6 +54,8 @@ public class FlightExamManager : MonoBehaviour
             {
                 missionText.text = "Objective: Land safely";
             }
+
+            Invoke(nameof(ClearStatusText), 2f);
         }
     }
 
