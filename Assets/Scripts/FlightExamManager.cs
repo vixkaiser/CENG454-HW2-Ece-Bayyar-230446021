@@ -20,7 +20,7 @@ public class FlightExamManager : MonoBehaviour
 
         if (missionText != null)
         {
-            missionText.text = "Take off";
+            missionText.text = "Objective: Take off";
         }
     }
     
@@ -35,22 +35,7 @@ public class FlightExamManager : MonoBehaviour
 
         if (missionText != null)
         {
-            missionText.text = "Escape the danger zone";
-        }
-    }
-
-    public void RegisterMissileHit()
-    {
-        wasHitByMissile = true;
-
-        if (statusText != null)
-        {
-            statusText.text = "Hit by a missile!";
-        }
-
-        if (missionText != null)
-        {
-            missionText.text = "Take Off";
+            missionText.text = "Objective: Escape the danger zone";
         }
     }
 
@@ -67,8 +52,23 @@ public class FlightExamManager : MonoBehaviour
 
             if (missionText != null)
             {
-                missionText.text = "Land safely";
+                missionText.text = "Objective: Land safely";
             }
+        }
+    }
+
+        public void RegisterMissileHit()
+    {
+        wasHitByMissile = true;
+
+        if (statusText != null)
+        {
+            statusText.text = "Hit by a missile!";
+        }
+
+        if (missionText != null)
+        {
+            missionText.text = "Objective: Take off";
         }
     }
 
@@ -82,6 +82,11 @@ public class FlightExamManager : MonoBehaviour
     if (statusText != null)
     {
         statusText.text = "Mission Complete!";
+    }
+
+    if (missionText != null)
+    {
+        missionText.text = "Success";
     }
 
     missionComplete = true;
