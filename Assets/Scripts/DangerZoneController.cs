@@ -18,9 +18,9 @@ public class DangerZoneController : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            examManager.EnterDangerZone();
-
             playerTransform = collision.transform;
+
+            examManager.EnterDangerZone();
 
             activeCountdown = StartCoroutine(StartMissileCountdown());
         }

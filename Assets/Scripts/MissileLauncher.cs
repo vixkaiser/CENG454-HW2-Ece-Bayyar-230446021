@@ -17,6 +17,7 @@ public class MissileLauncher : MonoBehaviour
 
         Debug.Log("Missile launching triggered");
         Debug.Log("Launch point position: " + launchPoint.position);
+        Debug.Log("Target passed to launcher: " + (target != null ? target.name : "NULL"));
 
         activeMissile = Instantiate(missilePrefab, launchPoint.position, launchPoint.rotation);
         
