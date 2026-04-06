@@ -65,7 +65,7 @@ public class FlightExamManager : MonoBehaviour
 
         if (missionText != null)
         {
-            missionText.text = "Objective: Gain altitude";
+            missionText.text = "Objective: Stay on course";
         }
     }
 
