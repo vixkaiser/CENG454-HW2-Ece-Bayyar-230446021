@@ -5,6 +5,8 @@ public class FlightExamManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text statusText;
     [SerializeField] private TMP_Text missionText;
+    [SerializeField] private AudioSource successAudio;
+    [SerializeField] private AudioClip successClip;
 
     private bool hasTakenOff = false;
     private bool wasHitByMissile = false;
@@ -113,5 +115,10 @@ public class FlightExamManager : MonoBehaviour
     }
 
     missionComplete = true;
+    
+    if (successAudio != null && successClip != null)
+    {
+        successAudio.PlayOneShot(successClip);
+    }
 }
 }
