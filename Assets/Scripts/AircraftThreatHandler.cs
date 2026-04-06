@@ -4,6 +4,9 @@ public class AircraftThreatHandler : MonoBehaviour
 {
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private FlightExamManager examManager;
+    [SerializeField] private AudioSource explosionAudio;
+    [SerializeField] private AudioClip explosionClip;
+
 
     private Rigidbody rb;
 
@@ -21,6 +24,11 @@ public class AircraftThreatHandler : MonoBehaviour
         if (collision.CompareTag("Missile") && canBeHit)
         {
             canBeHit = false;
+
+            if (explosionAudio != null && explosionClip != null)
+            {
+                explosionAudio.PlayOneShot(explosionClip);
+            }
 
             if (examManager != null)
             {

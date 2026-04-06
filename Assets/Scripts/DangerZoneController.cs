@@ -6,6 +6,8 @@ public class DangerZoneController : MonoBehaviour
     [SerializeField] private FlightExamManager examManager;
     [SerializeField] private float missileDelay = 5f;
     [SerializeField] private MissileLauncher missileLauncher;
+    [SerializeField] private AudioSource dangerZoneAudio;
+    [SerializeField] private AudioClip dangerZoneClip;
 
     private Transform playerTransform;
 
@@ -18,9 +20,14 @@ public class DangerZoneController : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
+            playerTransform = collision.transform;
+
             examManager.EnterDangerZone();
 
-            playerTransform = collision.transform;
+            if (dangerZoneAudio != null && dangerZoneClip != null)
+            {
+                dangerZoneAudio.PlayOneShot(dangerZoneClip);
+            }
 
             activeCountdown = StartCoroutine(StartMissileCountdown());
         }
